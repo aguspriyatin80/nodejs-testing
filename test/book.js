@@ -150,3 +150,71 @@ describe('/DELETE/:id book', () => {
 });
 
 });
+
+// TAMBAHAN
+// berikut kode untuk testing upload file:
+
+// contoh untuk POST tanpa upload file:
+// it(‘should signup a user’,
+//     async () => {
+//       const response = await chai.request(app)
+//         .post(signupUrl)
+//         .send({
+//           firstName: 'franklin',
+//           lastName: 'Isaiah',
+//           phoneNumber: '123345756',
+//           age: '11',
+//           gender: 'male',
+//           state: 'lagos',
+//           country: 'Nigeria',
+//           email: 'login@user.com',
+//           password: 'password',
+//         });
+//       expect(response.body).to.be.an('object');
+//       expect(response.body.status).to.equal(201);
+//       expect(response.body.data).to.have.property('id');
+//       expect(response.body.data).to.have.property('email');
+//       expect(response.body.data).to.have.property('firstName');
+//       expect(response.body.data).to.have.property('lastName');
+//       expect(response.body.data).to.have.property('phoneNumber');
+//       expect(response.body.data).to.have.property('age');
+//       expect(response.body.data).to.have.property('gender');
+//       expect(response.body.data).to.have.property('state');
+//       expect(response.body.data).to.have.property('country');
+//     },
+//   );
+
+// CONTOH KODE UNTUK UPLOAD FILE:
+// import fs
+// import fs from 'fs';
+// it(‘should signup a user’,
+//   async () => {
+//     const response = await chai.request(app)
+//       .post(signupUrl)
+//       .set('Content-Type', 'application/x-www-form-urlencoded')
+//       .field('firstName', 'franklin')
+//       .field('lastName', 'Isaiah')
+//       .field('phoneNumber', '123345756')
+//       .field('age', '11')
+//       .field('gender', 'male')
+//       .field('state', 'lagos')
+//       .field('country', 'Nigeria')
+//       .field('email', 'login@user.com')
+//       .field('password', 'password')
+//       .attach('avatar',
+//         fs.readFileSync('/home/ghostcoder/Downloads/preview.png'),
+//         'preview.png');
+//     expect(response.body).to.be.an('object');
+//     expect(response.body.status).to.equal(201);
+//     expect(response.body.data).to.have.property('id');
+//     expect(response.body.data).to.have.property('email');
+//     expect(response.body.data).to.have.property('firstName');
+//     expect(response.body.data).to.have.property('lastName');
+//     expect(response.body.data).to.have.property('phoneNumber');
+//     expect(response.body.data).to.have.property('age');
+//     expect(response.body.data).to.have.property('gender');
+//     expect(response.body.data).to.have.property('state');
+//     expect(response.body.data).to.have.property('country');
+//   },
+// );
+// sumber: https://medium.com/@cavdy/write-a-mocha-test-for-file-upload-and-input-field-d8fc6c9fcfa
